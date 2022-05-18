@@ -1,17 +1,19 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../Firebase";
 import { useState, useEffect } from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
 const Login = () => {
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
-  let navigator = useNavigate();
+  let navigate = useNavigate();
   useEffect(() => {
     if (user) {
       toast.success("Sucessfully Loged In");
-      navigator("/");
+      navigate(from, { replace: true });
     }
   }, [loading, user]);
   const [email, setEmail] = useState("");
