@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import "./App.css";
+import { useState } from "react";
+import Selectthem from "./Components/Selectthem";
+import Home from "./Components/Home";
+import { Route, Routes } from "react-router-dom";
+import Login from "./Components/User/Login";
+import Signup from "./Components/User/Signup";
 function App() {
+  const [them, setThem] = useState("theme-swiss");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App patterns min-w-screen relative min-h-screen flex justify-center items-center ">
+      <Selectthem setThem={setThem} them={them}/>
+      <div className={`${them}`}>
+         <Routes>
+           <Route path="/" element={ <Home/>}/>
+           <Route path="/signin" element={<Login/>}/>
+           <Route path="/signup" element={<Signup/>}/>
+         </Routes>
+      </div>
+      
     </div>
   );
 }
