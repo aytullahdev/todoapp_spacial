@@ -5,7 +5,7 @@ import auth from '../Firebase';
 import Progressbar from '../Progressbar';
 const Notrequredauth = ({children}) => {
     const location = useLocation();
-     let from = location.state?.from?.pathname || "/";
+     let from = location.state?.from?.pathname || "/dashboard";
      let navigate = useNavigate();
     const [user, loading, error] = useAuthState(auth);
     if(loading){
