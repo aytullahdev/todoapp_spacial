@@ -13,18 +13,15 @@ const Signup = () => {
   let navigate = useNavigate();
   useEffect(() => {
     if (user) {
+      toast.success("Account Created");
       navigate("/");
     }
   }, [user,loading]);
   const handle=()=>{
+      if(email==='' || pwd===''){toast.error("Enter email and password");return;}
       if(pwd!==cpwd){toast.error("Password Doesn't Match !");return;}
       if(pwd.length<6){toast.error("Password length must be 6 character !");return;}
-      createUserWithEmailAndPassword(email,pwd)
-      .then((res)=>{
-        console.log(res);
-        toast.success("Account Created");
-         
-      })
+      createUserWithEmailAndPassword(email,pwd);
   }
   return (
     <div>
