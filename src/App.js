@@ -27,7 +27,7 @@ function App() {
     <div>
       <div className="App patterns min-w-screen relative min-h-screen flex justify-center items-center ">
         <div>
-         { user && <Link to='/dashboard' className=" absolute top-0 left-0 text-5xl p-4">💻</Link>}
+         { user && <Link to='/dashboard' className=" absolute top-0 left-0 text-lg btn btn-success text-white m-2">💻 DASHBOARD</Link>}
         </div>
         <Selectthem setThem={setThem} them={them} />
         <div className={`${them}`}>
