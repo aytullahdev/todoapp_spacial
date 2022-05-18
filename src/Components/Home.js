@@ -1,11 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Home = () => {
-    return (
-        <div>
-            <div
+  return (
+    <div>
+      <div
         className={` relative bg-skin-fill max-w-4xl mx-auto overflow-hidden sm:rounded-2xl`}
       >
         <img
@@ -41,8 +41,8 @@ const Home = () => {
           </div>
         </div>
       </div>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default Home;
