@@ -12,6 +12,8 @@ import "react-toastify/dist/ReactToastify.css";
 import Requredauth from "./Components/Secure/Requredauth";
 import Progressbar from "./Components/Progressbar";
 import Notrequredauth from "./Components/Secure/Notrequredauth";
+import Dashboard from "./Components/User/Dashboard";
+import Usertodolisit from "./Components/User/Usertodolisit";
 function App() {
   const [them, setThem] = useState("theme-swiss");
   
@@ -23,9 +25,11 @@ function App() {
         <div className={`${them}`}>
          
           <Routes>
-            <Route path="/" element={<Requredauth><Home /></Requredauth>} />
+            <Route path="/" element={<Home />} />
             <Route path="/signin" element={<Notrequredauth><Login /></Notrequredauth>} />
             <Route path="/signup" element={<Notrequredauth><Signup /></Notrequredauth>} />
+            <Route path="/dashboard" element={<Requredauth><Dashboard/></Requredauth>}/>
+            <Route path="/tasklist" element={<Requredauth><Usertodolisit/></Requredauth>}/>
             <Route path="*" element={<Pagenotfound />} />
           </Routes>
           
