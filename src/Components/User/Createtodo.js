@@ -21,7 +21,7 @@ const Createtodo = () => {
             tdesc:tascDesc,
             done:0,
         }
-        fetch('http://localhost:5000/addtask',{
+        fetch('https://ayttodo.herokuapp.com/addtask',{
             method:'POST',
             headers:{
                 'content-type':'application/json',
